@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JFJ Shopping</title>
+    <link rel="icon" href="/img/shopping bag.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="search.css"> 
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img class="imglogo" src="/img/shopping bag.png" alt="logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="ค้นหาสินค้า...">
+                <button id="search-button">ค้นหา</button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li><a href="#products">สินค้าทั้งหมด</a></li>
+                    <li><a href="#" onclick="alert('ขณะนี้ทางร้านเรายังไม่มีสินค้าใหม่เพิ่มเข้ามา ขออภัยในความไม่สะดวก🙏'); return false;">สินค้ามาใหม่</a></li> <!-- alert กล่องแจ้งเตือนภาษา Js./return false ให้หน้าเว็บหยุดทำงาน-->
+                    <li><a href="login.html">เข้าสู่ระบบ</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="#" id="open-cart-btn">
+                    ตะกร้าสินค้า (<span id="cart-item-count">0</span>) <!--จะใส่()ตรงเลขตะกร้าต้องอยู่นอกคำสั่งเท่านั้น-->
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero"> <!--section สร้างขึ้นเพื่อจัดหมวดหมู่ให้ google เข้าใจเนื้อหาได้ง่าย-->
+        <div class="container">
+            <h1>สินค้าคุณภาพดี ราคาโดนใจ</h1>
+            <p>ขอบคุณที่แวะมาเยี่ยมชมร้านค้าออนไลน์ของเรา ที่นี่คุณจะได้พบกับสินค้าคุณภาพเยี่ยมในราคาสุดคุ้ม เรามีสินค้าหลากหลายประเภทให้คุณเลือกช้อปได้อย่างจุใจ พร้อมโปรโมชั่นพิเศษและบริการจัดส่งที่รวดเร็ว
+ไม่ว่าคุณกำลังมองหาสินค้าแฟชั่น เครื่องใช้ในบ้าน อุปกรณ์อิเล็กทรอนิกส์ หรือของขวัญสุดพิเศษ ที่นี่คือจุดหมายปลายทางของคุณ</p>
+            <a href="#products" class="button">เลือกซื้อสินค้าเลย</a>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <h2>สินค้าแนะนำ</h2>
+            <div class="product-grid" id="product-grid">
+                <div class="product-item" data-product-id="1" data-product-name="ปืนฉีดน้ำ" data-product-price="129"><a href="/product1/product.html">
+                    <img src="https://down-th.img.susercontent.com/file/th-11134207-7r98p-lve9gjf4nfux31.webp" alt="ปืนฉีดน้ำ">
+                    <h3>ปืนฉีดน้ำ</h3>
+                    <p class="price">฿129</p>
+                </a>
+                <button class="add-to-cart-btn1">เพิ่มใส่ตะกร้า</button>
+                </div>
+                <div class="product-item" data-product-id="2" data-product-name="โต๊ะตั้งคอมพิวเตอร์" data-product-price="699"><a href="/product2/product2.html">
+                    <img src="https://down-th.img.susercontent.com/file/th-11134207-7r98u-lviavff5rh1l38.webp" alt="โต๊ะตั้งคอมพิวเตอร์">
+                    <h3>โต๊ะตั้งคอมพิวเตอร์</h3>
+                    <p class="price">฿699</p>
+                </a>
+                <button class="add-to-cart-btn">เพิ่มใส่ตะกร้า</button>
+                </div>
+                <div class="product-item" data-product-id="3" data-product-name="คีย์บอร์ด" data-product-price="590"><a href="/product3/product3.html">
+                    <img src="https://down-th.img.susercontent.com/file/th-11134207-7r98o-ll0hgzgyiiqydc.webp" alt="คีย์บอร์ด">
+                    <h3>คีย์บอร์ด</h3>
+                    <p class="price">฿590</p>
+                </a>
+                <button class="add-to-cart-btn">เพิ่มใส่ตะกร้า</button>
+                </div>
+                <div class="product-item" data-product-id="4" data-product-name="โคมไฟ" data-product-price="230"><a href="/product4/product4.html">
+                    <img src="https://down-th.img.susercontent.com/file/cn-11134207-7ras8-m1mek31zsbp06c.webp" alt="โคมไฟ"> 
+                    <h3>โคมไฟ</h3>
+                    <p class="price">฿230</p>
+                </a>
+                <button class="add-to-cart-btn">เพิ่มใส่ตะกร้า</button>
+                </div>
+                <div class="product-item" data-product-id="5" data-product-name="แพ็คลูกอม" data-product-price="60"><a href="/product5/product5.html">
+                    <img src="https://down-th.img.susercontent.com/file/th-11134207-7rasi-m54bua3p373q84.webp" alt="แพ็คลูกอม">
+                    <h3>แพ็คลูกอม</h3>
+                    <p class="price">฿60</p>
+                </a>
+                <button class="add-to-cart-btn">เพิ่มใส่ตะกร้า</button>
+                </div>
+                <div class="product-item" data-product-id="6" data-product-name="เยลลี่" data-product-price="77"><a href="/product6/product6.html">
+                    <img src="https://down-th.img.susercontent.com/file/sg-11134201-7rdy4-lxkuv89tcae781.webp" alt="เยลลี่">
+                    <h3>เยลลี่</h3>
+                    <p class="price">฿77</p>
+                </a>
+                <button class="add-to-cart-btn">เพิ่มใส่ตะกร้า</button>
+                </div>
+                <div class="product-item" data-product-id="7" data-product-name="ขนมเคลือบช็อกโกแลต" data-product-price="120"><a href="/product7/product7.html">
+                    <img src="https://down-th.img.susercontent.com/file/37cc81cb97e9d19a1f77daddd71f73bc.webp" alt="ขนมเคลือบช็อกโกแลต">
+                    <h3>ขนมเคลือบช็อกโกแลต</h3>
+                    <p class="price">฿120</p>
+                </a>
+                <button class="add-to-cart-btn">เพิ่มใส่ตะกร้า</button>
+                </div>
+                <div class="product-item" data-product-id="8" data-product-name="ป็อกกี้" data-product-price="124"><a href="/product8/product8.html">
+                    <img src="https://down-th.img.susercontent.com/file/th-11134207-7quky-lf8jvtckqxoxca.webp" alt="ป็อกกี้">
+                    <h3>ป็อกกี้</h3>
+                    <p class="price">฿124</p>
+                </a>
+                <button class="add-to-cart-btn">เพิ่มใส่ตะกร้า</button>
+                </div>
+            </div>
+            <div class="view-all">
+                <a href="#products" onclick="alert('ในขณะนี้ทางร้านเรามีแค่สินค้าแนะนำเพียงเท่านั้น🙇‍♂️')"class="button secondary">ดูสินค้าทั้งหมด</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-modal">
+            <h2>ตะกร้าสินค้าของคุณ</h2>
+            <ul class="cart-items" id="cart-items">
+                </ul>
+            <div class="cart-total">
+                <strong>รวมทั้งหมด: ฿<span id="cart-total-price">0</span></strong>
+            </div>
+            <div class="cart-actions">
+                <button class="button secondary" id="close-cart-btn">ปิดตะกร้า</button>
+                <button class="button primary"id="checkout-btn">สั่งซื้อสินค้า</button>
+            </div>
+        </div>
+    </div>
+    <script>
+  // เลือกปุ่มสั่งซื้อ
+  const checkoutBtn = document.getElementById('checkout-btn');
+
+  // เมื่อคลิก ให้ไปหน้า buyall.html
+  checkoutBtn.addEventListener('click', () => {
+    window.location.href = "buyall.html"; // <-- ปรับ path ตามตำแหน่งไฟล์จริง
+  });
+</script>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ร้านค้าออนไลน์ JFJ Shopping. สงวนลิขสิทธิ์.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="search.js"></script> 
+</body>
+</html>
